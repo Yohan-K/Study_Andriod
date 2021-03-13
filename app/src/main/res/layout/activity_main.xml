@@ -10,15 +10,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Yohan-K"
         android:textColor="#0C88EA"
-        android:textSize="20sp"
-        android:text="Yohan-K" />
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#B33030"
-        android:text="하하" />
+        android:text="하하"
+        android:textColor="#B33030" />
 
     <EditText
         android:id="@+id/et_id"
@@ -42,4 +42,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="이동" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/img_test"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher" />
+    </LinearLayout>
 </LinearLayout>
