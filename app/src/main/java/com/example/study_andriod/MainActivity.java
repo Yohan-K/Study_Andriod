@@ -5,10 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText et_test;
     private String str;
     ImageView img_test;
+    private ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         btn_test = findViewById(R.id.btn_test);
         btn_move = findViewById(R.id.btn_move);
         et_test = findViewById(R.id.et_test);
+        list = (ListView)findViewById(R.id.list);
 
+        // Button
         btn_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Image
         img_test = (ImageView)findViewById(R.id.img_test);
         img_test.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,5 +66,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "이미지 클릭!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        // List
+        List<String> data = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, data);
+        list.setAdapter(adapter);
+        data.add("요한킴");
+        data.add("맥북");
+        data.add("사자");
+        adapter.notifyDataSetChanged(); // 저장
     }
 }
