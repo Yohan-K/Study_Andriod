@@ -61,5 +61,10 @@
             android:src="@mipmap/ic_launcher" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/et_save"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        />
 
 </LinearLayout>
